@@ -15,6 +15,12 @@ class SpicesController < ApplicationController
         render json: spice, status: :ok
     end
 
+    def destroy
+        spice = find_spice
+        spice.destroy
+        head :no_content
+    end
+
     private
 
     def spice_params
